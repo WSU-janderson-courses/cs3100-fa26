@@ -2,7 +2,7 @@
  * @file functions.h
  * @brief This file contains function declarations, but not their definitions.
  *
- * Including this file in other C++ files will let those files know
+ * Including this file in other C++ cpp_compile will let those cpp_compile know
  * that these functions exist so they can be called.
  *
  * The definitions/implementations of these functions are located in the

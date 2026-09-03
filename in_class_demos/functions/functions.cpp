@@ -4,7 +4,7 @@
  * in `functions.h`.
  *
  * This file **should not** be included in another source file. Only .h header
- * files are included.
+ * cpp_compile are included.
  */
 #include <iostream>
 

@@ -3,12 +3,11 @@ project(cs3100-fa26)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# assignments
+add_subdirectory(in_class_demos)
 
+# add_subdirectory(assignments)
 
-# projects
+# add_subdirectory(projects)
 
-
-# in class demos
 
 
