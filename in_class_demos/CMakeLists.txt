@@ -6,5 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 # in class demos
 add_subdirectory(cpp_compile)
 add_subdirectory(functions)
+add_subdirectory(arrays)
 
 
