@@ -45,3 +45,7 @@ void increment_value(int* ptr) {
         // 2. store result in the lhs
     *ptr = *ptr + 1;
 }
+
+void print_message(const std::string& message) {
+    std::cout << message << std::endl;
+}

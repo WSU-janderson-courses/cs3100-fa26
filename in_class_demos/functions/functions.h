@@ -39,8 +39,18 @@ void increment_value(int& value); // pass by reference
 /**
  * Increments the value pointed to by `ptr`. The address of an integer
  * is passed in, and the integer at that address is incremented.
- * @param value a pointer to an integer, the integer at that address
+ * @param ptr a pointer to an integer, the integer at that address
  * is incremented
  */
 void increment_value(int* ptr); // pass by pointer (pointer is copied)
+
+/**
+ * Outputs the string passed in to the console
+ *
+ * @param message string to be printed. It is passed by const reference,
+ * meaning the string isn't copied to the function, and print_message()
+ * cannot modify the original string even though it is passed by reference
+ */
+void print_message(const std::string& message);
+
 #endif
