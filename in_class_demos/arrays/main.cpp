@@ -10,17 +10,19 @@ int main() {
     // const: we assign it when we declare it, and we can't modify it later
     const int ARRAY_SIZE = 6;
 
+    int num = 42;
+
     // create an array on the stack that can hold `ARRAY_SIZE` number of ints
     // the `= {}` fills the array with default values
     int array[ARRAY_SIZE] = {}; // raw array
-
-    // update element at index 0
-    array[0] = 42;
 
     // assign 10, 20, 30, ... to all elements of array
     for (int i = 0; i < ARRAY_SIZE; i++) {
         array[i] = (i + 1) * 10;
     }
+
+    // update element at index 2
+    array[2] = 42;
 
     // output array, but `ARRAY_SIZE + 1` accesses off the end of the array
     // C++ does not prevent you from doing this
