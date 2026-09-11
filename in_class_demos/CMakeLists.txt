@@ -7,5 +7,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(cpp_compile)
 add_subdirectory(functions)
 add_subdirectory(arrays)
+add_subdirectory(dynamic_mem)
 
 
