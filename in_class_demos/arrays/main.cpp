@@ -10,13 +10,13 @@
 void print_array(const int array[], int array_size) {
     for (int i = 0; i < array_size; i++) {
         std::cout << array[i] << " ";
-        //array[i] = array[i] * 10; // if we use `const` when passing the array, we can't modify the elements
+        // array[i] = array[i] * 10; // if we use `const` when passing the array, we can't modify the elements
     }
     std::cout << std::endl;
 }
 
 // here we aren't using `const` when passing the array, meaning we can alter what `array` is pointing to...
-void fill_range_array(int array[], int array_size, int range_start) {
+void fill_range_array(int* array, int array_size, int range_start) {
     for (int i = 0; i < array_size; i++) {
         array[i] = i + range_start; // what happens to the array that is passed in?
     }
