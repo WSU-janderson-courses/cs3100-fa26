@@ -49,7 +49,7 @@ int main() {
     const size_t ARRAY_SIZE = 6;
     size_t num = 0;
 
-    int array[] = {};
+    int array[ARRAY_SIZE] = {};
 
     fill_range_array(array, ARRAY_SIZE, 100);
     print_array(array, ARRAY_SIZE);
@@ -57,7 +57,13 @@ int main() {
     std::cout << "Enter the array size: ";
     std::cin >> num;
 
+    int* dynamic_array = new int[num]; // new: allocate memory on the heap and return a pointer
+    fill_range_array(dynamic_array, num, 7);
+    print_array(dynamic_array, num);
+
     print_new_array(num);
+
+    delete[] dynamic_array;
 
     return 0;
 }
