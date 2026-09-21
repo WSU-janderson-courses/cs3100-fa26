@@ -5,13 +5,29 @@
 #ifndef CS3100_FA26_INTARRAYLIST_H
 #define CS3100_FA26_INTARRAYLIST_H
 
+
 // declaration
 class IntArrayList {
 public:
-    int data[10] = {};
-    int count = 0;
+    static const int INITIAL_CAPACITY = 10;
+
+    IntArrayList(); // default
+
+    IntArrayList(int initialCapacity);
 
     void add(int value);
+
+    int get(int position) const;
+
+    int size() const;
+    int capacity() const;
+
+private:
+
+    int* data = nullptr;
+    int count = 0;
+    int array_capacity = 0;
+
 };
 
 #endif //CS3100_FA26_INTARRAYLIST_H
