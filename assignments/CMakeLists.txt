@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 # assignments
 add_subdirectory(A02_cpp_basics)
 add_subdirectory(A03_files)
+add_subdirectory(A04_parameters_references)
 
 
 
