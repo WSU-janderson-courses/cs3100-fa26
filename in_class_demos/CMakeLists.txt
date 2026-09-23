@@ -9,5 +9,6 @@ add_subdirectory(functions)
 add_subdirectory(arrays)
 add_subdirectory(dynamic_mem)
 add_subdirectory(classes)
+add_subdirectory(linked_list)
 
 
