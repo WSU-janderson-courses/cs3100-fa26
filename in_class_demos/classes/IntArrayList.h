@@ -14,6 +14,7 @@
 #ifndef CS3100_FA26_INTARRAYLIST_H
 #define CS3100_FA26_INTARRAYLIST_H
 
+#include <ostream>
 
 // declaration
 class IntArrayList {
@@ -46,6 +47,9 @@ public:
 
     // capacity of the array
     int capacity() const;
+
+    // output the contents of the list
+    void print_list(std::ostream& os) const;
 
 private:
 

@@ -43,15 +43,19 @@ int main() {
         // output what is at position (index) 4 in the list
         std::cout << "position 4: " << list.get(4) << std::endl;
 
-        print_list(list); // passing `list` to `print_list()` makes a copy with the copy constructor
+        list.print_list(std::cout); // we can call the `print_list()` method,
+                                        //and pass std::cout, or any C++ object
+                                        // that inherits from `std::ostream`
 
         IntArrayList list2;
         list2.add(99);
         list2.add(98);
-        print_list(list2);
+
+        list2.print_list(std::cout);
 
         list2 = list; // assigning list to list2 uses the assignment operator
-        print_list(list2);
+
+        list2.print_list(std::cout);
     }
 
     std::cout << "Done" << std::endl;

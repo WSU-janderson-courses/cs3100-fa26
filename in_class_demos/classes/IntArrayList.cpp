@@ -139,6 +139,10 @@ IntArrayList::~IntArrayList() {
 /**
  * Pushes a new element to the end of the list. If the list is at capacity, the list is not altered.
  * After a successful add(), the count is incremented to represent the new size of the list.
+ *
+ * For your consideration: what would we need to do in order for add() to always
+ * add a new value to the end of the list?
+ *
  * @param value The element to be added to the end of the list.
  */
 void IntArrayList::add(int value) {
@@ -154,6 +158,11 @@ void IntArrayList::add(int value) {
  * Retrieve the element at the given position in the list
  * Currently, get() allows out-of-bounds access, so the user should check the position is
  * valid (less than size()) before calling get().
+ *
+ * For your consideration: if I wanted `get()` to handle out-of-bounds list
+ * accesses, what are some ways to do that? C++ has exceptions, but it
+ * also has `std::optional`, which if you're curious you can look into.
+ *
  * @param position The position in the list to retrieve an element
  * @return The element at the given position in the list
  */
@@ -163,6 +172,7 @@ int IntArrayList::get(int position) const {
 
 /**
  * Retrieve the number of elements currently in the list.
+ *
  * @return the `count` or number of elements in the list
  */
 int IntArrayList::size() const {
@@ -171,9 +181,30 @@ int IntArrayList::size() const {
 
 /**
  * Retrieve the total capacity of the `data` array
+ *
  * @return The capacity of the `data` array, or how many elements the
  * list could possible store
  */
 int IntArrayList::capacity() const {
     return this->array_capacity;
+}
+
+/**
+ * Output the contents of the list, if we want to output to the console
+ * we can pass `std::cout`.
+ *
+ * Note: it's easy to get confused and use `std::cout` in a print method
+ * like this, but we want to use `os` instead, as that will output
+ * to whatever `std::ostream` that is passed in.
+ *
+ * @param os the `ostream` the list is output to
+ */
+void IntArrayList::print_list(std::ostream& os) const {
+    for (int i = 0; i < this->count; i++) {
+        os << this->data[i];
+        if (i < this->count - 1) {
+            os << ", ";
+        }
+    }
+    os << std::endl;
 }
