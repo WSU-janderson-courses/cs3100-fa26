@@ -13,6 +13,16 @@ public:
     Node* next;
 };
 
+
+void push_front(Node*& head, int value) {
+    Node* newFront = new Node;
+    newFront->value = value;
+
+    newFront->next = head; // newFront->next to point to head
+
+    head = newFront;
+}
+
 int main() {
     std::cout << "Linked List Demo" << std::endl;
 
@@ -20,4 +30,19 @@ int main() {
     // point to the next node. If the list is empty, `head == nullptr`. If
     // there is one thing in the list, `head->next == nullptr`.
     Node* head = nullptr;
+
+    if (head == nullptr) {
+        std::cout << "Linked List is empty" << std::endl;
+
+        // start list
+        head = new Node;
+
+        head->value = 5;
+        head->next = nullptr;
+    }
+
+    push_front(head, 10);
+
+    std::cout << "Done" << std::endl;
+    return 0;
 }
