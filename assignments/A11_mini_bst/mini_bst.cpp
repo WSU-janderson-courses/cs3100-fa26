@@ -109,3 +109,20 @@ BSTNode* mini_bst::find_min(BSTNode* root) {
     return root;
 }
 
+void mini_bst::print_inorder(std::ostream& os, const BSTNode* root) {
+    if (root) {
+        print_inorder(os, root->left);
+        os << root->key << " ";
+        print_inorder(os, root->right);
+    }
+}
+
+void mini_bst::print_tree_sideways(std::ostream& os, const BSTNode* current, int depth) {
+    if (current) {
+        print_tree_sideways(os, current->right, depth + 1);
+
+        os << KeyType(depth * 4, ' ') << current->key << std::endl;
+
+        print_tree_sideways(os, current->left, depth + 1);
+    }
+}

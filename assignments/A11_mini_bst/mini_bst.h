@@ -71,5 +71,7 @@ namespace mini_bst{
 
     BSTNode *find_min(BSTNode *root);
 
+    void print_inorder(std::ostream& os, const BSTNode* root);
+
     void print_tree_sideways(std::ostream &os, const BSTNode *root, int depth);
 }
