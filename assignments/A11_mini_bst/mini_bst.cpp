@@ -1,60 +1,104 @@
-//
-//
-//
+
+#include <iostream>
 
 #include "mini_bst.h"
 
 bool mini_bst::insert(BSTNode*& root, BSTNode* newNode) {
-    // base case 1: root is null
+    if (!root) {
+        root = newNode;
+        return true;
+    }
 
-    // base case 2: duplicate
-    return false;
+    if (!newNode || newNode->key == root-> key) {
+        return false;
+    }
 
-    // result = recursive left/right
+    bool inserted  = false;
 
-    // update height
+    if (newNode->key < root-> key) {
+        inserted = insert(root->left, newNode);
+    } else if (newNode->key > root-> key) {
+        inserted = insert(root->right, newNode);
+    }
 
-    // return result
+    if  (inserted) {
+        update_height(root);
+    }
+
+    return inserted;
 }
 
 BSTNode* mini_bst::search(BSTNode* root, const KeyType& key) {
+    if (!root) {
+        return nullptr;
+    }
+
+    if (root->key == key) {
+        return root;
+    }
+
+    if (key < root->key) {
+        return search(root->left, key);
+    }
+    if (key > root->key) {
+        return search(root->right, key);
+    }
+
     return nullptr;
 }
 
-void mini_bst::keys(BSTNode* root, std::vector<KeyType>& result) {
-
+void mini_bst::keys(BSTNode* root, std::vector<KeyType>& output) {
+    if (root) {
+        keys(root->left, output);
+        output.push_back(root->key);
+        keys(root->right, output);
+    }
 }
 
-// Recursion practice
 std::size_t mini_bst::size(BSTNode* root) {
-    return 0;
+    if (!root) {
+        return 0;
+    }
+
+    return size(root->left) + size(root->right) + 1;
 }
 
-void mini_bst::clear(BSTNode*& root) {
-    // post order traversal
-}
-
-// AVL preparation
 int mini_bst::node_height(BSTNode* node) {
-    // either return node->height or -1
-    return 0;
+    if (!node) {
+        return -1;
+    }
+
+    return node->height;
 }
 
 void mini_bst::update_height(BSTNode* node) {
-    // use node_height to get height of node's left and right subtree
-    // update node's stored height = max(lh, rh) + 1
+    if (!node) {return;}
+    node->height = std::max(node_height(node->left), node_height(node->right)) + 1;
 }
+
 int mini_bst::balance_factor(BSTNode* node) {
-    // use node_height to get height of node's left and right subtree
-    // return balance of node
-    return 0;
+    if (!node) {
+        return 0;
+    }
+    return node_height(node->left) - node_height(node->right);
 }
+
+void mini_bst::clear(BSTNode*& root) {
+    if (root) {
+        clear(root->left);
+        clear(root->right);
+        delete root;
+        root = nullptr;
+    }
+}
+
+
 
 BSTNode* mini_bst::remove(BSTNode*& root, const KeyType& key) {
     if (root) {
         BSTNode* removeResult = nullptr;
 
-        // find the node to remove
+        // find the node to renmove
         if (root->key == key) {
             removeResult = remove_node(root);
         }  else if (key < root->key) {
