@@ -1,0 +1,10 @@
+"npc001" "Mira Stone" "Ranger" 12
+"npc002" "Bram Ironroot" "Warrior" 18
+"npc003" "Selene Moonfall" "Mage" 21
+"npc004" "Tarin Fox" "Rogue" 11
+"npc005" "Edda Vale" "Healer" 16
+"npc006" "Orin Blackwell" "Merchant" 7
+"npc007" "Kael Ember" "Knight" 14
+"npc008" "Lysa Windmere" "Scout" 10
+"npc009" "Nora Flint" "Artificer" 17
+"npc010" "Pell Brook" "Bard" 9
